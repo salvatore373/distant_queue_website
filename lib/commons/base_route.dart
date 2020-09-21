@@ -56,7 +56,7 @@ class Footer extends StatelessWidget {
           WidgetSpan(
             child: InkWell(
               onTap: () {
-                launch('https://github.com/salvatore373/distantqueue_website');
+                launch('https://github.com/salvatore373/distant_queue_website');
               },
               child: Text(
                 localization.getString('and_hosted_on_github'),
