@@ -1,14 +1,14 @@
 <center> <img height=116px alt='DistantQueue logo' src='https://github.com/salvatore373/distant_queue_website/raw/master/assets/images/customer_icon.png'/></center>
 
-# DistantQueue - website
+# DistantQueue - website ([link](http://distant-queue.com))
 This is the project of a website to introduce potential users to the DistantQueue service. It was developed with Flutter, but only for web purpose.
 
 ## The DistantQueue service
 DistantQueue is a service that allows its users to "skip the line" in any kind of business. It is made up of two apps: *DistantQueue - Customer* that you can use to book the "jump-the-line" tickets that allow you to avoid queues, and *DistantQueue - Owner* that you can use to manage your business registered to DistantQueue. The apps are available on both Google Play and the App Store.
 
-| **DistantQueue - Customer** | <a href='https://play.google.com/store/apps/details?id=com.distant_queue.customer'><img height=64 alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a> | [![customer app on app store](https://github.com/salvatore373/distant_queue_website/raw/master/assets/app-store-badges/app-store-badge-en.png =x56)](https://apps.apple.com/app/id1523551412) |
+| **DistantQueue - Customer** | <a href='https://play.google.com/store/apps/details?id=com.distant_queue.customer'><img height=64 alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a> | [![customer app on app store](https://raw.githubusercontent.com/salvatore373/distant_queue_website/master/assets/app-store-badges/app-store-badge-en.png =x56)](https://apps.apple.com/app/id1523551412) |
 |--|--|--|
-| **DistantQueue - Owner** | <a href='https://play.google.com/store/apps/details?id=com.distant_queue.owner'><img height=64px alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a> | [![owner app on app store](https://github.com/salvatore373/distant_queue_website/raw/master/assets/app-store-badges/app-store-badge-en.png =x56)](https://apps.apple.com/app/id1523553911) |
+| **DistantQueue - Owner** | <a href='https://play.google.com/store/apps/details?id=com.distant_queue.owner'><img height=64px alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a> | [![owner app on app store](https://raw.githubusercontent.com/salvatore373/distant_queue_website/master/assets/app-store-badges/app-store-badge-en.png =x56)](https://apps.apple.com/app/id1523553911) |
 
 
 

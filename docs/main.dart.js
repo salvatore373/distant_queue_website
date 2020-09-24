@@ -51210,7 +51210,7 @@ F:function(a,b){var s=null,r=K.ax(b,!1),q=L.cU(b,C.b4,t.k),p=q.am(0,"copyright_t
 o=S.a7V(144)
 return M.b4(s,T.cE(H.a([O.a8k(),new T.aN(C.DC,n,s),new T.aN(C.bP,m,s)],t.t),C.S,C.ba,C.b1),s,o,new S.cC(s,s,s,s,s,C.o0,C.a1),s,s,s,s,s,s)}}
 U.Qc.prototype={
-$0:function(){T.oH("https://github.com/salvatore373/distantqueue_website")},
+$0:function(){T.oH("https://github.com/salvatore373/distant_queue_website")},
 $S:0}
 U.Dd.prototype={
 F:function(a,b){var s=null,r=L.cU(b,C.b4,t.k),q=B.acf(b)===C.pL?new Z.n5(new U.T1(r),new U.T2(b),L.a8J(C.ry,s,s),s,t.At):T.VA(H.a([N.a5A(L.bO(r.am(0,"for_businesses"),s,s,s,s),new U.T3(b),s,s,s),new T.aN(C.rq,N.a5A(L.bO(r.am(0,"for_customers"),s,s,s,s),new U.T4(b),s,s,s),s),new T.aN(C.rq,new O.ph(!0,s),s)],t.t),C.S,C.bm,C.b1)
