@@ -42,10 +42,10 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localization = StringsLocalization.of(context);
+    final localization = StringsLocalization.of(context)!;
 
     final copyright = Text(
-      localization.getString('copyright_text'),
+      localization.getString('copyright_text')!,
       style: theme.textTheme.caption,
     );
 
@@ -59,8 +59,8 @@ class Footer extends StatelessWidget {
                 launch('https://github.com/salvatore373/distant_queue_website');
               },
               child: Text(
-                localization.getString('and_hosted_on_github'),
-                style: theme.textTheme.caption.copyWith(
+                localization.getString('and_hosted_on_github')!,
+                style: theme.textTheme.caption!.copyWith(
                   fontWeight: FontWeight.bold,
                   decoration: TextDecoration.underline,
                 ),
@@ -69,7 +69,7 @@ class Footer extends StatelessWidget {
           ),
         ],
       ),
-      style: theme.textTheme.caption.copyWith(fontWeight: FontWeight.bold),
+      style: theme.textTheme.caption!.copyWith(fontWeight: FontWeight.bold),
     );
 
     return Container(
@@ -123,15 +123,15 @@ class NavigationBar extends StatelessWidget {
         itemBuilder: (context) => <PopupMenuEntry<_MenuButtonItems>>[
           PopupMenuItem<_MenuButtonItems>(
             value: _MenuButtonItems.forBusinesses,
-            child: Text(localization.getString('for_businesses')),
+            child: Text(localization!.getString('for_businesses')!),
           ),
           PopupMenuItem<_MenuButtonItems>(
             value: _MenuButtonItems.forCustomers,
-            child: Text(localization.getString('for_customers')),
+            child: Text(localization.getString('for_customers')!),
           ),
           PopupMenuItem<_MenuButtonItems>(
             value: _MenuButtonItems.contact,
-            child: Text(localization.getString('contacts')),
+            child: Text(localization.getString('contacts')!),
           ),
         ],
       );
@@ -141,7 +141,7 @@ class NavigationBar extends StatelessWidget {
       navigationButtons = Row(
         children: [
           FlatButton(
-            child: Text(localization.getString('for_businesses')),
+            child: Text(localization!.getString('for_businesses')!),
             onPressed: () {
               Navigator.of(context).pushNamed(ForBusinessesRoute.routeName);
             },
@@ -149,7 +149,7 @@ class NavigationBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 56.0),
             child: FlatButton(
-              child: Text(localization.getString('for_customers')),
+              child: Text(localization.getString('for_customers')!),
               onPressed: () {
                 Navigator.of(context).pushNamed(ForCustomersRoute.routeName);
               },
@@ -188,8 +188,8 @@ class BaseRoute extends StatefulWidget {
   final Widget child;
 
   BaseRoute({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
   })  : assert(child != null),
         super(key: key);
 
@@ -198,7 +198,7 @@ class BaseRoute extends StatefulWidget {
 }
 
 class _BaseRouteState extends State<BaseRoute> {
-  ThemeData _theme;
+  late ThemeData _theme;
 
   @override
   void didChangeDependencies() {

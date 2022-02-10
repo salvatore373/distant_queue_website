@@ -50,16 +50,16 @@ class StoreBadges extends StatelessWidget {
   final String appStoreLink;
 
   StoreBadges({
-    Key key,
-    @required this.googlePlayLink,
-    @required this.appStoreLink,
+    Key? key,
+    required this.googlePlayLink,
+    required this.appStoreLink,
   })  : assert(googlePlayLink != null),
         assert(appStoreLink != null),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final localization = StringsLocalization.of(context);
+    final localization = StringsLocalization.of(context)!;
     final theme = Theme.of(context);
 
     final languageCode = localization.locale.languageCode;
@@ -104,8 +104,8 @@ class StoreBadges extends StatelessWidget {
         ),
         Flexible(
           child: Text(
-            localization.getString('store_badges_credits'),
-            style: theme.textTheme.overline.copyWith(
+            localization.getString('store_badges_credits')!,
+            style: theme.textTheme.overline!.copyWith(
               color: theme.colorScheme.onSecondary,
             ),
           ),
@@ -120,7 +120,7 @@ class _QuestionsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localization = StringsLocalization.of(context);
+    final localization = StringsLocalization.of(context)!;
 
     final content = Column(
       mainAxisSize: MainAxisSize.min,
@@ -128,8 +128,8 @@ class _QuestionsSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          localization.getString('do_you_have_any_question'),
-          style: theme.textTheme.headline4.copyWith(
+          localization.getString('do_you_have_any_question')!,
+          style: theme.textTheme.headline4!.copyWith(
             fontWeight: FontWeight.w600,
             color: theme.colorScheme.onSecondary,
           ),
@@ -164,21 +164,21 @@ class DescriptiveIllustration extends StatelessWidget {
   final String descriptionTitle;
 
   /// The text below the title next to the illustration
-  final String descriptionText;
+  final String? descriptionText;
 
   /// The words in [descriptionText] to display in bold
-  final String descriptionTextToBoldify;
+  final String? descriptionTextToBoldify;
 
   /// An optional widget to place below the description
-  final Widget descriptionFooter;
+  final Widget? descriptionFooter;
 
   /// The direction of the descriptive illustration
   final DescriptiveIllustrationDirection direction;
 
   DescriptiveIllustration({
-    Key key,
-    @required this.illustrationPath,
-    @required this.descriptionTitle,
+    Key? key,
+    required this.illustrationPath,
+    required this.descriptionTitle,
     this.descriptionText,
     this.descriptionFooter,
     this.descriptionTextToBoldify,
@@ -190,16 +190,16 @@ class DescriptiveIllustration extends StatelessWidget {
   /// Returns the widget to use as description, with the right section in bold
   Widget createDescriptionTextWidget(TextStyle textStyle) {
     if (descriptionTextToBoldify == null) {
-      return Text(descriptionText, style: textStyle);
+      return Text(descriptionText!, style: textStyle);
     }
 
-    final startIndex = descriptionText.indexOf(descriptionTextToBoldify);
-    final boldEndIndex = startIndex + descriptionTextToBoldify.length;
+    final startIndex = descriptionText!.indexOf(descriptionTextToBoldify!);
+    final boldEndIndex = startIndex + descriptionTextToBoldify!.length;
 
     // Divide the text in sections
-    final preBold = descriptionText.substring(0, startIndex);
-    final bold = descriptionText.substring(startIndex, boldEndIndex);
-    final postBold = descriptionText.substring(boldEndIndex);
+    final preBold = descriptionText!.substring(0, startIndex);
+    final bold = descriptionText!.substring(startIndex, boldEndIndex);
+    final postBold = descriptionText!.substring(boldEndIndex);
 
     return Text.rich(
       TextSpan(
@@ -242,7 +242,7 @@ class DescriptiveIllustration extends StatelessWidget {
             children: [
               Text(
                 descriptionTitle,
-                style: theme.textTheme.headline4.copyWith(
+                style: theme.textTheme.headline4!.copyWith(
                   fontWeight: FontWeight.w500,
                   color: theme.colorScheme.onSecondary,
                 ),
@@ -252,7 +252,7 @@ class DescriptiveIllustration extends StatelessWidget {
                   : Padding(
                       padding: const EdgeInsets.only(top: 16.0),
                       child: createDescriptionTextWidget(
-                        theme.textTheme.headline5.copyWith(
+                        theme.textTheme.headline5!.copyWith(
                           color: theme.colorScheme.onSecondary,
                         ),
                       ),
@@ -301,7 +301,7 @@ class IllustratedBaseRoute extends StatelessWidget {
   final String title;
 
   /// The text to place below [title]
-  final String subtitle;
+  final String? subtitle;
 
   /// The list of illustrations and relative text to show
   final List<DescriptiveIllustration> descriptiveIllustrations;
@@ -311,10 +311,10 @@ class IllustratedBaseRoute extends StatelessWidget {
   final bool showContactsRedirect;
 
   IllustratedBaseRoute({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.subtitle,
-    @required this.descriptiveIllustrations,
+    required this.descriptiveIllustrations,
     this.showContactsRedirect = true,
   })  : assert(title != null),
         assert(descriptiveIllustrations != null),
@@ -336,7 +336,7 @@ class IllustratedBaseRoute extends StatelessWidget {
               title,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.headline3.copyWith(
+              style: theme.textTheme.headline3!.copyWith(
                 fontWeight: FontWeight.bold,
                 color: theme.colorScheme.onBackground,
               ),
@@ -346,11 +346,11 @@ class IllustratedBaseRoute extends StatelessWidget {
                 : Padding(
                     padding: CommonDimensions.topDividerPadding,
                     child: Text(
-                      subtitle,
+                      subtitle!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
-                      style: theme.textTheme.headline5.copyWith(
+                      style: theme.textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.w400,
                         color: theme.colorScheme.onBackground,
                       ),

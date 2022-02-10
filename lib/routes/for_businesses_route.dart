@@ -33,7 +33,7 @@ class ForBusinessesRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localization = StringsLocalization.of(context);
+    final localization = StringsLocalization.of(context)!;
 
     final storeBadgesFooter = StoreBadges(
       googlePlayLink: appGooglePlayLink,
@@ -41,12 +41,12 @@ class ForBusinessesRoute extends StatelessWidget {
     );
 
     return IllustratedBaseRoute(
-      title: localization.getString('for_businesses_route_title'),
+      title: localization.getString('for_businesses_route_title')!,
       subtitle: localization.getString('for_businesses_route_subtitle'),
       descriptiveIllustrations: [
         DescriptiveIllustration(
           illustrationPath: 'assets/illustrations/download_owner.png',
-          descriptionTitle: localization.getString('download_owner_ill_title'),
+          descriptionTitle: localization.getString('download_owner_ill_title')!,
           descriptionText: localization.getString('download_owner_ill_text'),
           descriptionTextToBoldify: localization.getString('completely_free'),
           descriptionFooter: storeBadgesFooter,
@@ -54,13 +54,13 @@ class ForBusinessesRoute extends StatelessWidget {
         ),
         DescriptiveIllustration(
           illustrationPath: 'assets/illustrations/create_shop.png',
-          descriptionTitle: localization.getString('create_business_ill_title'),
+          descriptionTitle: localization.getString('create_business_ill_title')!,
           descriptionText: localization.getString('create_business_ill_text'),
           direction: DescriptiveIllustrationDirection.illustrationOnRight,
         ),
         DescriptiveIllustration(
           illustrationPath: 'assets/illustrations/scan_qr.png',
-          descriptionTitle: localization.getString('scan_ticket_ill_title'),
+          descriptionTitle: localization.getString('scan_ticket_ill_title')!,
           descriptionText: localization.getString('scan_ticket_ill_text'),
           direction: DescriptiveIllustrationDirection.illustrationOnLeft,
         ),

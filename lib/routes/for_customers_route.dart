@@ -33,7 +33,7 @@ class ForCustomersRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localization = StringsLocalization.of(context);
+    final localization = StringsLocalization.of(context)!;
 
     final storeBadgesFooter = StoreBadges(
       googlePlayLink: appGooglePlayLink,
@@ -41,13 +41,13 @@ class ForCustomersRoute extends StatelessWidget {
     );
 
     return IllustratedBaseRoute(
-      title: localization.getString('for_customers_route_title'),
+      title: localization.getString('for_customers_route_title')!,
       subtitle: localization.getString('for_customers_route_subtitle'),
       descriptiveIllustrations: [
         DescriptiveIllustration(
           illustrationPath: 'assets/illustrations/download_customer.png',
           descriptionTitle:
-              localization.getString('download_customer_ill_title'),
+              localization.getString('download_customer_ill_title')!,
           descriptionText: localization.getString('download_customer_ill_text'),
           descriptionTextToBoldify: localization.getString('completely_free'),
           descriptionFooter: storeBadgesFooter,
@@ -55,13 +55,13 @@ class ForCustomersRoute extends StatelessWidget {
         ),
         DescriptiveIllustration(
           illustrationPath: 'assets/illustrations/search.png',
-          descriptionTitle: localization.getString('search_business_ill_title'),
+          descriptionTitle: localization.getString('search_business_ill_title')!,
           descriptionText: localization.getString('search_business_ill_text'),
           direction: DescriptiveIllustrationDirection.illustrationOnRight,
         ),
         DescriptiveIllustration(
           illustrationPath: 'assets/illustrations/show_ticket.png',
-          descriptionTitle: localization.getString('show_ticket_ill_title'),
+          descriptionTitle: localization.getString('show_ticket_ill_title')!,
           descriptionText: localization.getString('show_ticket_ill_text'),
           direction: DescriptiveIllustrationDirection.illustrationOnLeft,
         ),

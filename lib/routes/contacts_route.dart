@@ -31,8 +31,8 @@ class ContactsRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localization = StringsLocalization.of(context);
-    final textTheme = theme.textTheme.headline5;
+    final localization = StringsLocalization.of(context)!;
+    final textTheme = theme.textTheme.headline5!;
 
     final contactsInfo = Text.rich(TextSpan(
       text: localization.getString('contacts_ill_text'),
@@ -55,12 +55,12 @@ class ContactsRoute extends StatelessWidget {
     ));
 
     return IllustratedBaseRoute(
-      title: localization.getString('contact_us'),
+      title: localization.getString('contact_us')!,
       showContactsRedirect: false,
       descriptiveIllustrations: [
         DescriptiveIllustration(
           illustrationPath: 'assets/illustrations/contacts.png',
-          descriptionTitle: localization.getString('contacts_ill_title'),
+          descriptionTitle: localization.getString('contacts_ill_title')!,
           descriptionFooter: contactsInfo,
           direction: DescriptiveIllustrationDirection.illustrationOnLeft,
         ),

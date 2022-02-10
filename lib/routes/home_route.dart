@@ -44,7 +44,7 @@ const _kUseCaseIconSize = 248.0;
 class _HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final localization = StringsLocalization.of(context);
+    final localization = StringsLocalization.of(context)!;
     final theme = Theme.of(context);
 
     final background = Column(
@@ -74,8 +74,8 @@ class _HomeHeader extends StatelessWidget {
         Padding(
           padding: CommonDimensions.topDividerPadding,
           child: Text(
-            localization.getString('app_name'),
-            style: theme.textTheme.headline4.copyWith(
+            localization.getString('app_name')!,
+            style: theme.textTheme.headline4!.copyWith(
               fontWeight: FontWeight.w500,
               color: theme.colorScheme.onPrimary,
             ),
@@ -84,9 +84,9 @@ class _HomeHeader extends StatelessWidget {
         Padding(
           padding: CommonDimensions.topDividerPadding,
           child: Text(
-            localization.getString('home_screen_app_description'),
+            localization.getString('home_screen_app_description')!,
             textAlign: TextAlign.center,
-            style: theme.textTheme.headline6.copyWith(
+            style: theme.textTheme.headline6!.copyWith(
               fontWeight: FontWeight.normal,
               color: theme.colorScheme.onPrimary,
             ),
@@ -126,9 +126,9 @@ class _StrengthsListItem extends StatefulWidget {
   final String description;
 
   _StrengthsListItem({
-    Key key,
-    @required this.title,
-    @required this.description,
+    Key? key,
+    required this.title,
+    required this.description,
   })  : assert(title != null),
         assert(description != null),
         super(key: key);
@@ -139,14 +139,14 @@ class _StrengthsListItem extends StatefulWidget {
 
 class _StrengthsListItemState extends State<_StrengthsListItem>
     with SingleTickerProviderStateMixin {
-  ThemeData _theme;
+  late ThemeData _theme;
 
   // Whether the widget is expanded to show the item description
   bool _isExpanded = false;
 
   // The animation stuff to expand the rectangle
-  AnimationController _animationController;
-  Animation<double> _animation;
+  late AnimationController _animationController;
+  late Animation<double> _animation;
 
   @override
   void initState() {
@@ -200,7 +200,7 @@ class _StrengthsListItemState extends State<_StrengthsListItem>
   Widget build(BuildContext context) {
     final title = Text(
       widget.title.toUpperCase(),
-      style: _theme.textTheme.headline5.copyWith(
+      style: _theme.textTheme.headline5!.copyWith(
         fontWeight: FontWeight.bold,
         color: _theme.colorScheme.onPrimary,
       ),
@@ -215,7 +215,7 @@ class _StrengthsListItemState extends State<_StrengthsListItem>
             child: Text(
               // widget.description, Cannot use this code for a Flutter web bug
               _isExpanded ? widget.description : '',
-              style: _theme.textTheme.subtitle1.copyWith(
+              style: _theme.textTheme.subtitle1!.copyWith(
                 fontWeight: FontWeight.normal,
                 color: _theme.colorScheme.onPrimary,
               ),
@@ -261,13 +261,13 @@ class _StrengthsListItemState extends State<_StrengthsListItem>
 class _StrengthsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    StringsLocalization _localization = StringsLocalization.of(context);
+    StringsLocalization _localization = StringsLocalization.of(context)!;
     ThemeData _theme = Theme.of(context);
 
     final title = Text(
-      _localization.getString('why_choose_app'),
+      _localization.getString('why_choose_app')!,
       textAlign: TextAlign.center,
-      style: _theme.textTheme.headline3.copyWith(
+      style: _theme.textTheme.headline3!.copyWith(
         color: _theme.colorScheme.onPrimary,
       ),
     );
@@ -281,16 +281,16 @@ class _StrengthsSection extends StatelessWidget {
       alignment: WrapAlignment.center,
       children: [
         _StrengthsListItem(
-          title: _localization.getString('free'),
-          description: _localization.getString('free_item_description'),
+          title: _localization.getString('free')!,
+          description: _localization.getString('free_item_description')!,
         ),
         _StrengthsListItem(
-          title: _localization.getString('easy_to_use'),
-          description: _localization.getString('easy_to_use_item_description'),
+          title: _localization.getString('easy_to_use')!,
+          description: _localization.getString('easy_to_use_item_description')!,
         ),
         _StrengthsListItem(
-          title: _localization.getString('innovative'),
-          description: _localization.getString('innovative_item_description'),
+          title: _localization.getString('innovative')!,
+          description: _localization.getString('innovative_item_description')!,
         ),
       ],
     );
@@ -329,13 +329,13 @@ class _RedirectionButton extends StatelessWidget {
   final String description;
 
   /// The function to call when this button is pressed
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   _RedirectionButton({
-    Key key,
-    @required this.iconPath,
-    @required this.title,
-    @required this.description,
+    Key? key,
+    required this.iconPath,
+    required this.title,
+    required this.description,
     this.onTap,
   })  : assert(iconPath != null),
         assert(title != null),
@@ -350,7 +350,7 @@ class _RedirectionButton extends StatelessWidget {
 
     final titleWidget = Text(
       title.toUpperCase(),
-      style: theme.textTheme.headline4.copyWith(
+      style: theme.textTheme.headline4!.copyWith(
         color: theme.colorScheme.onSecondary,
         fontWeight: FontWeight.w500,
       ),
@@ -358,7 +358,7 @@ class _RedirectionButton extends StatelessWidget {
     final descriptionWidget = Text(
       description,
       textAlign: TextAlign.center,
-      style: theme.textTheme.headline6.copyWith(
+      style: theme.textTheme.headline6!.copyWith(
         color: theme.colorScheme.onSecondary,
         fontWeight: FontWeight.normal,
       ),
@@ -422,9 +422,9 @@ class _UseCaseIcon extends StatelessWidget {
   final String iconPath;
 
   _UseCaseIcon({
-    Key key,
-    @required this.text,
-    @required this.iconPath,
+    Key? key,
+    required this.text,
+    required this.iconPath,
   })  : assert(text != null),
         assert(iconPath != null),
         super(key: key);
@@ -454,7 +454,7 @@ class _UseCaseIcon extends StatelessWidget {
       text,
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
-      style: theme.textTheme.headline5.copyWith(
+      style: theme.textTheme.headline5!.copyWith(
         color: theme.colorScheme.onSecondary,
         fontWeight: FontWeight.w500,
       ),
@@ -482,12 +482,12 @@ class _UseCaseIcon extends StatelessWidget {
 class _UseCasesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final localization = StringsLocalization.of(context);
+    final localization = StringsLocalization.of(context)!;
     final theme = Theme.of(context);
 
     final title = Text(
-      localization.getString('suitable_for'),
-      style: theme.textTheme.headline3.copyWith(
+      localization.getString('suitable_for')!,
+      style: theme.textTheme.headline3!.copyWith(
         color: theme.colorScheme.onSecondary,
         fontWeight: FontWeight.w500,
       ),
@@ -502,39 +502,39 @@ class _UseCasesSection extends StatelessWidget {
       alignment: WrapAlignment.center,
       children: [
         _UseCaseIcon(
-          text: localization.getString('supermarkets'),
+          text: localization.getString('supermarkets')!,
           iconPath: 'assets/icons/supermarket.png',
         ),
         _UseCaseIcon(
-          text: localization.getString('hairdressers'),
+          text: localization.getString('hairdressers')!,
           iconPath: 'assets/icons/hairdresser.png',
         ),
         _UseCaseIcon(
-          text: localization.getString('clinics'),
+          text: localization.getString('clinics')!,
           iconPath: 'assets/icons/clinic.png',
         ),
         _UseCaseIcon(
-          text: localization.getString('offices'),
+          text: localization.getString('offices')!,
           iconPath: 'assets/icons/office.png',
         ),
         _UseCaseIcon(
-          text: localization.getString('medical_offices'),
+          text: localization.getString('medical_offices')!,
           iconPath: 'assets/icons/doctor.png',
         ),
         _UseCaseIcon(
-          text: localization.getString('banks'),
+          text: localization.getString('banks')!,
           iconPath: 'assets/icons/bank.png',
         ),
         _UseCaseIcon(
-          text: localization.getString('shops'),
+          text: localization.getString('shops')!,
           iconPath: 'assets/icons/shop.png',
         ),
         _UseCaseIcon(
-          text: localization.getString('restaurants'),
+          text: localization.getString('restaurants')!,
           iconPath: 'assets/icons/restaurant.png',
         ),
         _UseCaseIcon(
-          text: localization.getString('any_kind_of_business'),
+          text: localization.getString('any_kind_of_business')!,
           iconPath: 'assets/icons/more.png',
         ),
       ],
@@ -571,7 +571,7 @@ class _UseCasesSection extends StatelessWidget {
 class _RedirectionSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final localization = StringsLocalization.of(context);
+    final localization = StringsLocalization.of(context)!;
 
     final redirectionButtons = Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
@@ -582,16 +582,16 @@ class _RedirectionSection extends StatelessWidget {
       children: [
         _RedirectionButton(
           iconPath: 'assets/icons/shop.png',
-          title: localization.getString('for_businesses'),
-          description: localization.getString('business_button_description'),
+          title: localization.getString('for_businesses')!,
+          description: localization.getString('business_button_description')!,
           onTap: () {
             Navigator.of(context).pushNamed(ForBusinessesRoute.routeName);
           },
         ),
         _RedirectionButton(
           iconPath: 'assets/icons/user.png',
-          title: localization.getString('for_customers'),
-          description: localization.getString('customers_button_description'),
+          title: localization.getString('for_customers')!,
+          description: localization.getString('customers_button_description')!,
           onTap: () {
             Navigator.of(context).pushNamed(ForCustomersRoute.routeName);
           },

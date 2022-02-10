@@ -32,7 +32,7 @@ class DistantQueueLogo extends StatelessWidget {
   final bool onPrimary;
 
   DistantQueueLogo({
-    Key key,
+    Key? key,
     this.interactive = false,
     this.onPrimary = true,
   }) : super(key: key);
@@ -40,7 +40,7 @@ class DistantQueueLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localization = StringsLocalization.of(context);
+    final localization = StringsLocalization.of(context)!;
 
     final color =
         onPrimary ? theme.colorScheme.onPrimary : theme.colorScheme.onSecondary;
@@ -60,8 +60,8 @@ class DistantQueueLogo extends StatelessWidget {
             child: Image.asset('assets/images/customer.png'),
           ),
           Text(
-            localization.getString('app_name'),
-            style: theme.textTheme.caption.copyWith(
+            localization.getString('app_name')!,
+            style: theme.textTheme.caption!.copyWith(
               color: color,
             ),
           ),
@@ -78,14 +78,14 @@ class ContactsButton extends StatelessWidget {
   final bool onPrimary;
 
   ContactsButton({
-    Key key,
+    Key? key,
     this.onPrimary = true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localization = StringsLocalization.of(context);
+    final localization = StringsLocalization.of(context)!;
 
     final color =
         onPrimary ? theme.colorScheme.onPrimary : theme.colorScheme.onSecondary;
@@ -98,7 +98,7 @@ class ContactsButton extends StatelessWidget {
       child: FlatButton(
         textColor: color,
         padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16.0),
-        child: Text(localization.getString('contacts')),
+        child: Text(localization.getString('contacts')!),
         onPressed: () {
           Navigator.of(context).pushNamed(ContactsRoute.routeName);
         },
@@ -113,8 +113,8 @@ class RouteHeader extends StatelessWidget {
   final Widget child;
 
   RouteHeader({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
   })  : assert(child != null),
         super(key: key);
 

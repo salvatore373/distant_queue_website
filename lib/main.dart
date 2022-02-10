@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
 class AnalyticsRouteObserver extends RouteObserver<PageRoute<dynamic>> {
   final Analytics analytics;
 
-  AnalyticsRouteObserver({@required this.analytics});
+  AnalyticsRouteObserver({required this.analytics});
 
   void _sendPageView(PageRoute<dynamic> route) {
     var pageName = route.settings.name;
@@ -77,7 +77,7 @@ class AnalyticsRouteObserver extends RouteObserver<PageRoute<dynamic>> {
   }
 
   @override
-  void didPush(Route route, Route previousRoute) {
+  void didPush(Route route, Route? previousRoute) {
     if (route is PageRoute) {
       _sendPageView(route);
     }
@@ -85,7 +85,7 @@ class AnalyticsRouteObserver extends RouteObserver<PageRoute<dynamic>> {
   }
 
   @override
-  void didReplace({Route newRoute, Route oldRoute}) {
+  void didReplace({Route? newRoute, Route? oldRoute}) {
     if (newRoute is PageRoute) {
       _sendPageView(newRoute);
     }
@@ -93,7 +93,7 @@ class AnalyticsRouteObserver extends RouteObserver<PageRoute<dynamic>> {
   }
 
   @override
-  void didPop(Route<dynamic> route, Route<dynamic> previousRoute) {
+  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
     if (previousRoute is PageRoute && route is PageRoute) {
       _sendPageView(previousRoute);
     }
