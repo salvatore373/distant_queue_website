@@ -368,6 +368,7 @@ class _RedirectionButton extends StatelessWidget {
       style: NeumorphicStyle(
         shape: NeumorphicShape.concave,
         boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(24.0)),
+        color: theme.colorScheme.secondary,
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -406,6 +407,7 @@ class _RedirectionButton extends StatelessWidget {
         onPressed: onTap,
         style: NeumorphicStyle(
           shape: NeumorphicShape.convex,
+          color: theme.colorScheme.secondary,
         ),
         child: Padding(
           padding: CommonDimensions.standardOverallPadding,
@@ -437,6 +439,7 @@ class _UseCaseIcon extends StatelessWidget {
       style: NeumorphicStyle(
         shape: NeumorphicShape.concave,
         boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(48.0)),
+        color: theme.colorScheme.secondary,
       ),
       child: Container(
         width: 72.0,
@@ -557,6 +560,7 @@ class _UseCasesSection extends StatelessWidget {
         shape: NeumorphicShape.concave,
         boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(16.0)),
         depth: 2,
+        color: theme.colorScheme.secondary,
       ),
       child: Padding(
         padding: CommonDimensions.largeOverallPadding,

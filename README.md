@@ -28,7 +28,3 @@ I decided to use Flutter web anyway to start exploring and to get confidence wit
 ### Purpose of this project
 The main purpose of this website, as I stated at the beginning of this README, is to introduce potential users to the DistantQueue service. However, I decided to make it open source and to publish it on GitHub to provide the community with a nice Flutter Web real-life experiment, that anyone can play with. This is not a playground meant only for development purposes, but a website that was developed for real reasons and will have a real feedback, and that anyone can use to get in touch with a new platform.
 As any other GitHub project, anyone can contribute to this project, providing any kind of help or suggestions.
-
-### Issues
- - [ ] **Neumorphic design slows up home page**
-While testing the website I found out that the home page is much slower than the other routes, and you can check this just by scrolling the page down. I suppose that this problem is related to the neumorphic widgets that I use in the home route, because everything's fine in the routes that are not using them.
