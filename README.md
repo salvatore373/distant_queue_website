@@ -1,6 +1,6 @@
 <center> <img height=116px alt='DistantQueue logo' src='https://github.com/salvatore373/distant_queue_website/raw/master/assets/images/customer_icon.png'/></center>
 
-# DistantQueue - website ([link](http://distant-queue.com))
+# DistantQueue - website ([link](https://salvatore373.github.io/distant_queue_website/))
 This is the project of a website to introduce potential users to the DistantQueue service. It was developed with Flutter, but only for web purpose.
 
 ## The DistantQueue service
